@@ -1,0 +1,433 @@
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+body, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/*Fonts*/
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('../fonts/MyriadPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('../fonts/MyriadPro-Bold.ttf');
+    font-weight: bold;
+}
+
+/*First section*/
+
+#first-section {
+    font-family: 'Lato', sans-serif;
+    line-height: 0.8;
+    color: #fff;
+    padding: 13.8125rem 0 9.5625rem 0;
+    width: 100%;
+    background-image: url('../img/sonic.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.logo-wrapper{
+    width: 7.6875rem;
+    margin: 0 auto 7.75rem auto;
+}
+
+#title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.line-wrapper{
+    margin: 2.4375rem auto 3.625rem auto;
+    text-align: center;
+}
+
+.description{
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.read-more{
+    display: inline-block;
+    color: #fff;
+    border: 1px solid white;
+    font-size: 1rem;
+    display: block;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 11.375rem;
+    padding: 0;
+    margin: 10.125rem auto 4.625rem auto;
+    background-color: transparent;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.read-more:hover{
+    background-color: #fff;
+    color: #5d5d5d;
+}
+
+.arrow-wrapper{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*Header*/
+
+.header-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+}
+
+header{
+    height: 4.3125rem;
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+    color: #3c3c3c;
+}
+
+#menu-icon{
+    position: absolute;
+    right: 0.825rem;
+    font-size: 2rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.page-name{
+    font-family: 'MyriadPro';
+    font-weight: bold;
+    font-size: 1.625rem;
+    padding-top: 1.1875rem;
+    padding-left: 5px;
+}
+
+#navigation{
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top: 4.3125rem;
+    right: -1rem;
+    z-index: 10;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translate3d(9.375rem, 0, 0);
+            transform: translate3d(9.375rem, 0, 0);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.menu-item{
+    text-decoration: none;
+    width: 9.375rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 0.625rem;;
+    background-color: #fff;
+    color: #3c3c3c;
+    border-bottom: 1px solid #f2f2f2;
+    border-left: 1px solid #f2f2f2;
+    -webkit-transition: color 0.5s, background-color 0.5s;
+    -o-transition: color 0.5s, background-color 0.5s;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.menu-item:hover{
+    color: #fff;
+    background-color: #3c3c3c;
+}
+
+/*Toggling menu*/
+
+.open {
+    -webkit-transform: translate3d(-1rem, 0, 0) !important;
+            transform: translate3d(-1rem, 0, 0) !important;
+}
+
+/*About this page section*/
+
+#about {
+    width: 100%;
+}
+.about-title{
+    font-family: 'MyriadPro';
+    font-weight: bold;
+    margin: 7.3125rem auto 2.125rem auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.125rem;
+}
+
+.about-description{
+    font-family: 'Lato', sans-serif;
+    line-height: 1.4;
+    font-weight: 300;
+    margin: 2.4375rem auto 7.3125rem auto;
+    font-size: 1rem;
+    width: 90%;
+    text-align: center;
+    color: #494949;
+}
+
+/*Tiers*/
+
+main section:nth-of-type(2n){
+    background: #f3f3f3;
+    -webkit-box-shadow: 0 5px 9px 0 #5d5d5d, 0 -5px 9px 0 #5d5d5d;
+            box-shadow: 0 5px 9px 0 #5d5d5d, 0 -5px 9px 0 #5d5d5d;
+}
+
+#tier-1, #tier-2, #tier-3, #tier-4{
+    width: 100%;
+    padding-top: 11.125rem;
+    padding-bottom: 11.125rem;
+}
+
+.tier-header{
+    font-family: 'MyriadPro';
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.125rem;
+    margin-bottom: 4.4375rem;
+}
+
+.tier-description{
+    font-family: 'MyriadPro';
+    margin: 4.4375rem auto 4.4375rem auto;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.album-container {
+    width: 17.8125rem;
+    height: 17.8125rem;
+    margin: 0 1.375rem 1.5625rem 1.375rem;
+    -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    background-color: transparent;
+}
+
+.album {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+}
+
+.album img {
+    width: 100%;
+    height: 17.8125rem;
+    position: absolute;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+.album-back{
+    width: 17.8125rem;
+    height: 17.8125rem;
+    background: black;
+    position: absolute;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+.album-container:hover .album{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+}
+
+/*Styling albums' descriptions*/
+
+h3 {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.album-back{
+    font-family: 'MyriadPro'
+}
+
+.album-description{
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.album-1{
+    color: white;
+}
+
+.album-2 {
+    background: #373e21;
+    color: #faf8f7;
+}
+
+.album-3{
+    background: white;
+    color: #292526;
+}
+
+.album-4{
+    background: #438152;
+    color: #242623;
+}
+
+.album-5{
+    background: #171510;
+    color: #c2c39f;
+}
+
+.album-6{
+    background: #005699;
+    color: #bfc0c2;
+}
+
+.album-7{
+    background: #ac0610;
+    color: #060807;
+}
+
+.album-8{
+    background: #b7bed8;
+    color: #852919;
+}
+
+.album-9{
+    background: #d2ae34;
+    color: #12130e;
+}
+
+.album-10{
+    background: #4a4e59;
+    color: #fc443b;
+}
+
+.album-11 {
+    background: #d7cdd3;
+    color: #99695f;
+}
+
+.album-12{
+    background: #ece8e7;
+    color: #1d1220;
+}
+
+.album-13{
+    background: #141011;
+    color: #5699cc;
+}
+
+.album-14{
+    background: #5e2c20;
+    color: #f4f2eb;
+}
+
+/*Footer*/
+
+footer {
+    font-family: 'MyriadPro';
+    background: #3c3c3c;
+    color: #8b8b8b;
+    font-size: 0.825rem;
+}
+
+footer .logo-wrapper {
+    padding-top: 4.3125rem;
+    padding-bottom: 3.125rem;
+    width: 3.625rem;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+.logo-image{
+    width: 3.625rem;
+}
+
+.info-wrapper{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-bottom: 5.125rem;
+}
+
+.info-link{
+    text-decoration: none;
+    color: #8b8b8b;
+}
+
+/*Classes for scroll-activated animation*/
+
+.animate {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50px, 0);
+            transform: translate3d(0, 50px, 0);
+    -webkit-transition: opacity 1.2s linear, -webkit-transform 0.52s ease-in;
+    transition: opacity 1.2s linear, -webkit-transform 0.52s ease-in;
+    -o-transition: transform 0.52s ease-in, opacity 1.2s linear;
+    transition: transform 0.52s ease-in, opacity 1.2s linear;
+    transition: transform 0.52s ease-in, opacity 1.2s linear, -webkit-transform 0.52s ease-in;
+}
+
+.visible {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}

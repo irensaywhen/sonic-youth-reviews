@@ -1,0 +1,57 @@
+/*Tiers*/
+
+.container {
+    width: 62.5rem;
+    margin: 0 auto;
+}
+
+/*Header*/
+.header-wrapper{
+    border-bottom: 1px solid #f2f2f2;
+}
+header{
+    width: 62.5rem;
+    margin: 0 auto;
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom: none;
+}
+
+#menu-icon{
+    display: none;
+}
+
+#navigation{
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: center;
+    width: 26.4375rem;
+    -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+}
+
+.menu-item {
+    border: none;
+}
+
+.menu-item{
+    padding-left: 0;
+}
+
+/*Footer*/
+
+.info-wrapper{
+    width: 62.5rem;
+    margin: 0 auto;
+}
