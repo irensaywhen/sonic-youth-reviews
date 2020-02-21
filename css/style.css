@@ -17,6 +17,10 @@ body {
     position: relative;
 }
 
+main {
+    position: relative;
+}
+
 /*Fonts*/
 
 @font-face {
@@ -99,8 +103,10 @@ body {
 /*Header*/
 
 .header-wrapper {
-    position: -webkit-sticky;
-    position: sticky;
+    /*position: -webkit-sticky;
+    position: sticky;*/
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 100;
     background: #fff;
