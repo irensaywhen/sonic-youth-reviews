@@ -5,6 +5,8 @@
 $animatedElements = $('.animate');
 $window = $(window);
 
+let isScrolling = false;
+
 function isPartiallyVisible(elem){
 
     let elemBoundary = elem.getBoundingClientRect();
@@ -33,5 +35,18 @@ function dealWithScrolling(event){
     })
 }
 
-$window.on('scroll resize', dealWithScrolling);
+function throttleScroll(event){
+
+    if(!(isScrolling)){
+
+        window.requestAnimationFrame(function(){
+
+            dealWithScrolling(event);
+            isScrolling = false;
+        });
+    }
+    isScrolling = true;
+}
+
+$window.on('scroll resize', throttleScroll);
 $window.trigger('scroll');
