@@ -5,48 +5,67 @@
 $animatedElements = $('.animate');
 $window = $(window);
 
-let isScrolling = false;
+//Object with functions to deal with scrolling
 
-function isPartiallyVisible(elem){
+const scrolling = {
 
-    let elemBoundary = elem.getBoundingClientRect();
+    isScrolling: false,
 
-    //Caching
+    isPartiallyVisible: function(elem){
 
-    let height = elemBoundary.height;
-    let top = elemBoundary.top;
-    let bottom = elemBoundary.bottom;
+        //Save element's window-relative coordinates
+        let elemBoundary = elem.getBoundingClientRect();
 
-    //Return true if element is partially visible
-    return ((top + height >= 0) && (height + window.innerHeight) >= bottom);
-}
+        //Caching
 
-function dealWithScrolling(event){
+        let height = elemBoundary.height;
+        let top = elemBoundary.top;
+        let bottom = elemBoundary.bottom;
 
-    $animatedElements.each(function(){
+        //Return true if element is partially visible
+        return ((top + height >= 0) && (height + window.innerHeight) >= bottom);
+    },
 
-        if (isPartiallyVisible(this)){
+    dealWithScrolling: function(event){
 
-            $(this).addClass('visible');
+        $animatedElements.each(function(){
 
-        } else {
-            $(this).removeClass('visible');
+            //Check if any elements to be animated are visible
+            if (scrolling.isPartiallyVisible(this)){
+    
+                //Show partially visible elements
+                $(this).addClass('visible');
+    
+            } else {
+    
+                //Hide invisible elements
+                $(this).removeClass('visible');
+            }
+        })
+    },
+
+    throttleScroll: function(event){
+        if(!(scrolling.isScrolling)){ 
+
+            window.requestAnimationFrame(function(){
+    
+                scrolling.dealWithScrolling(event);
+                scrolling.isScrolling = false;
+            });
         }
-    })
+        scrolling.isScrolling = true;
+    },
+
+
 }
 
-function throttleScroll(event){
 
-    if(!(isScrolling)){
-
-        window.requestAnimationFrame(function(){
-
-            dealWithScrolling(event);
-            isScrolling = false;
+$window.on({
+    'load': function(event){
+        $('.preloader')
+        .fadeOut(700, function(){
+            $window.trigger('scroll');
         });
-    }
-    isScrolling = true;
-}
-
-$window.on('scroll resize', throttleScroll);
-$window.trigger('scroll');
+    },
+    'scroll resize': scrolling.throttleScroll,
+})
